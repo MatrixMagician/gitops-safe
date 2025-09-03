@@ -7,7 +7,7 @@ metadata:
 spec:
   project: humor-game-safe
   source:
-    repoURL: https://github.com/YOUR_USERNAME/YOUR_REPO
+    repoURL: https://github.com/MatrixMagician/gitops-safe
     targetRevision: gitops
     path: gitops-safe/overlays/dev
   destination:
