@@ -1,0 +1,19 @@
+# gitops-safe/argocd-application.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: humor-game-monitor
+  namespace: argocd
+spec:
+  project: humor-game-safe
+  source:
+    repoURL: https://github.com/YOUR_USERNAME/YOUR_REPO
+    targetRevision: gitops
+    path: gitops-safe/overlays/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: humor-game
+  syncPolicy:
+    automated:
+      prune: false   # Don't delete anything
+      selfHeal: false # Don't auto-fix drift
